@@ -1,0 +1,25 @@
+<html>
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script>
+
+$(function() {
+
+  $.ajax({
+    url: "https://egov.uscis.gov/cris/processingTimesDisplay.do",
+    data: "serviceCenter=993&displaySCProcTimes=Service+Center+Processing+Dates",
+    type: 'POST',
+    success: function (resp) {
+        alert(resp);
+    },
+    error: function(e) {
+        alert('Error: '+e);
+    }  
+  });
+
+});
+
+</script>
+<body>
+<div id="time">I-485 Reviewing cases from: <span id="date"></span></div>
+</body>
+</html>
